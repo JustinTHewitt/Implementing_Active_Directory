@@ -1,33 +1,51 @@
 # Implementing_Active_Directory
+## Descripton
+Project consists of showing user how to implement Active dierctory.
+Active Dierctory is a core of managing any team, and allows for Identity managemnt, User authentication, Group policys and more. 
 
-Prerequisites:
+Envirmonts used: Azure, WIndows 10, WIndows server, Virtual machines
 
 Azure Subscription: You'll need an active Azure subscription.
+### Steps
+Create two VMs, one being a windows server and the other a windows 10 Vm.Make sure to put your Server and your Windows 10 Vm on the same Resouce group and in the same regin to not cause problems.
+![jEYjm1txUm](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/460fc7ee-d72c-41ff-847e-0f17004da97c)
+This is my Windows Vm you can see the settings i have like what version of windows and what vm specs/size i used. I named mine Client-1 you can name your anyhting you would like. 
+![VJgXOsx9RS](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/33372909-6a24-43c2-8141-b373e5de0358)
+This is my Windows server Vm you can agian see settings and specs i used. I named mine Dc-1 test you can name yours anything that you would like. 
+![cg06Re9rcy](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/8b238967-970d-4d9c-a5fb-a0a3cf2aca13)
+ We will also make sure to make that our server is set to a static ip address.
+![veucaY92JW](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/7970d69b-12ed-4dda-b83f-ab898a7aee67)
+ Next we will log into our Windows Server and Install Active Directory. select "add roles and features"
+![DZqubc60fs](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/b4e975a3-49bf-482f-a96a-a2c287578e54)
+We will be hitting next on these screens. (hit next three more time)
+![3BSO33Qxq0](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/e2ec20b1-b7a5-480b-95a8-0a9ed7d450f8)
+![3IVQzEANBl](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/87036e00-8c6d-4f8a-a3ca-1dbed60b414a)
+![VRoEW9M8UO](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/dc6965c5-6a13-4d81-8405-05d9d5a5fe36)
 
-Azure Virtual Network: Create a virtual network if you haven't already. This network will be used to connect your Azure resources.
+When on "Server Roles" Select "Active Directory Domain Services" and select next. 
+![kbXRZoRfwI](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/0dcf4ee0-867f-4010-bb1d-c50659695939)
 
-Azure VM: You'll need a Windows Server VM. You can create one from the Azure portal or use an existing one.
+Select "Next" two more times.
 
-Azure Network Security Group: Ensure your VM has the necessary network security group rules to allow traffic for AD DS (TCP/UDP 389, TCP 636).
+![xPRF4hoN2e](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/2da27593-5c5b-423b-a079-ecd317e3dfd1)
+![6sTYoWGBb3](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/a8e78e7c-d555-4880-8abd-59e9e11f7899)
 
-DNS Configuration: Configure the DNS settings on your VM to point to your on-premises DNS server (if applicable) and itself (127.0.0.1).
+Select "install"
 
-Steps:
+![OnLRqVdPuR](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/b81e46ad-869e-4c8b-a8f9-0bd3e5febb92)
 
-Prepare the VM:
+Select "close"
 
-Install Windows Server on the VM.
-Assign a static IP address to the VM.
-Join the VM to your Azure Virtual Network.
-Install Active Directory:
+![ckqva7oQLx](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/18a2ef89-902d-4fe1-b224-bc20ddccd420)
 
-Log in to the VM.
-Open "Server Manager."
-Click on "Manage" and select "Add roles and features."
-In the "Add Roles and Features Wizard," select "Active Directory Domain Services."
-Complete the installation process, including promoting the server to a domain controller.
-Specify a domain name and set a Directory Services Restore Mode (DSRM) password.
-Configure DNS:
+Select "Promote this server to a domain controller"
+![WaIgeT2fvG](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/26a843f9-6103-4847-ac6d-367a98091b27)
+
+From this screen you will select "add a new forest", for Root domain name you can name it anything but it has to have a .com like a website. I will be using Testing.com for mine. 
+
+![WHrDt4vWuh](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/fe179932-f462-4bc8-afa4-320232a2f4a7)
+
+
 
 After AD DS is installed, open "Server Manager."
 Click on "Tools" and select "DNS" to open the DNS Manager.
