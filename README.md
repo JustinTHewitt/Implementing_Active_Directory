@@ -84,10 +84,34 @@ Then select "Member of"
 
 ![cJbNCzW8zs](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/b2689074-d7c3-459a-a06d-e057692212a3)
 
-You will select Add, in the box enter "domain" and select "Check names" and select "Domain Admins"
+You will select Add, in the box enter "domain" and select "Check names" and select "Domain Admins" Then select "Okay" and "Apply"
+
+![liggpONZ6U](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/d6dd1c8b-e38f-42e9-be31-5c9a180714d1)
+![XIks9A9Cw6](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/1d482281-0c93-4e29-b9f1-5ef0d49178c8)
+![Fp5fK3Pxjk](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/17ed06a5-2d11-426a-b588-17b3cbb8d40f)
+
+You should now be able to Log in as the Admin you just made, I suggest doing it just to make sure it work. Now we will join out windows 10 Vm (CLient-1) to our server. go to setting then "About" find "Rename this PC" and select it. 
+![XwS1VRRwfv](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/0d7bde0b-ebb5-4367-9992-319997167f96)
+
+Then select "Change..." 
+
+![vly0VQhVT5](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/4f54bac8-9ab8-480d-bd0d-b75f1bc8d81a)
+
+Select "Domain" and type in your Domain. (Mine being Testing.com)
+
+![HsuEq2G4sG](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/7a5897f0-ca05-42fb-bf50-7b4dc6a1aeb9)
+![1ApDvzXNnF](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/fc7c024f-15d6-4d70-87c9-a318870efd54)
+
+Now we are going to back into Azure and set WIndows 10 server (CLient-1) Dns settings to our Servers Private IP address. Go to your server on Azure and copy your Nic private Ip, then go to your windows 10 VM (client-1) select "Networking" then "Network Interface".
+
+![GSRkqBX2P3](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/33750dfc-3923-455a-9392-753ee267c139)
+
+Select "Dns Servers" then select "Custom" enter in the servers private IP and select "Save"
+![hC6LUN0rPt](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/69f4a925-128d-4de7-ac63-1a3e97a6a540)
+
+Go a head and restart your windows 10 Vm (client-1).
 
 
-.
 
 
 
@@ -95,14 +119,3 @@ You will select Add, in the box enter "domain" and select "Check names" and sele
 
 
 
-
-
-
-
-Validate that your Azure-based Active Directory is operational by creating users, groups, and objects.
-Ensure that your on-premises Active Directory can communicate with the Azure VM.
-Backup and Maintenance:
-
-
-Implement best practices for maintaining AD DS, such as monitoring, patching, and disaster recovery planning.
-Integrate with On-Premises AD (Optional):
