@@ -109,13 +109,5 @@ Now we are going to back into Azure and set WIndows 10 server (CLient-1) Dns set
 Select "Dns Servers" then select "Custom" enter in the servers private IP and select "Save"
 ![hC6LUN0rPt](https://github.com/JustinTHewitt/Implementing_Active_Directory/assets/146316539/69f4a925-128d-4de7-ac63-1a3e97a6a540)
 
-Go a head and restart your windows 10 Vm (client-1).
-
-
-
-
-
-
-
-
+Go a head and restart your windows 10 Vm (client-1). You are now set and can change and add new users as you need to. You are also able to change settings like who can acsess Remote Desktop and permisstions. 
 
