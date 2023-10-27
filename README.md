@@ -87,7 +87,7 @@ Then select "Member of"
 You will select Add, in the box enter "domain" and select "Check names" and select "Domain Admins"
 
 
-
+.
 
 
 
